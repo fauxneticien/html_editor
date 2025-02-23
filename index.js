@@ -55,14 +55,14 @@ function changeFontSize() {
 
 function updateLayout() {
     let layout = document.querySelector('#layout').value;
-    if (layout === 'horizontal') {
-        document.body.classList.add("horizontal");
+    if (layout === 'vertical') {
+        document.body.classList.remove("horizontal");
         document.body.classList.remove("edit_only");
     } else if (layout === 'edit only') {
         document.body.classList.add("edit_only");
         document.body.classList.remove("horizontal");
     } else {
-        document.body.classList.remove("horizontal");
+        document.body.classList.add("horizontal");
         document.body.classList.remove("edit_only");
     }
 }
@@ -79,4 +79,5 @@ let dataArea = document.getElementById("data");
 dataArea.onkeyup = realtime;
 
 update();
+updateLayout();
 changeFontSize();
